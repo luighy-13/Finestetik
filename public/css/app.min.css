@@ -7,14 +7,39 @@ body {
 }
 
 .bk-presentation {
-  background-image: url("/img/bk-doctores.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   background-color: #376CB2;
   color: #fff;
+  height: 80vh;
 }
 
 .bg-primary {
   background: #376CB2;
   color: #fff;
+}
+
+input {
+  outline: none;
+  border: 1px solid rgba(139, 171, 212, 0.0705882353);
+  width: 98.99%;
+  border-radius: 3px;
+  height: 40px;
+  margin-bottom: 3px !important;
+  margin-top: 3px !important;
+  background: #f8f8f8;
+  margin-right: 2px !important;
+  margin-left: 2px !important;
+  padding: 0.5rem !important;
+}
+
+textarea {
+  outline: none;
+  border: 1px solid rgba(139, 171, 212, 0.0705882353);
+  width: 98.99%;
+  border-radius: 3px;
+  margin-bottom: 3px !important;
+  margin-top: 3px !important;
+  background: #f8f8f8;
+  margin-right: 2px !important;
+  margin-left: 2px !important;
+  padding: 0.5rem !important;
 }
