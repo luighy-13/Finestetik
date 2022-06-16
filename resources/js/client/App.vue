@@ -23,7 +23,7 @@
             </p>
             <p class="text-center text-2xl">
                 No pagues tu cirugía de contado, déjanos ayudarte con un plan de
-                financiamiento mensual hecho a tu medida
+                financiamiento mensual hecho a tu medida.
             </p>
         </div>
 
