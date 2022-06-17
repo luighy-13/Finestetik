@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="/js/tailwind_3_1_3.js"></script>
         <link rel="stylesheet" href="/css/app.min.css">
     </head>
     <body>
