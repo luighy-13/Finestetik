@@ -1,12 +1,12 @@
 <template>
-    <div class="relative bg-gray-100 ">
+    <div class="relative bg-gray-100">
         <div class="bg-primary w-full h-3/6 border-bottom">
             <div class="flex h-20">
                 <div class="w-1/2 relative">
                     <img src="/logo-white.png" class="" />
                 </div>
                 <div
-                    class="xs:w-0 md:w-1/2  flex flex-row items-center justify-end"
+                    class="xs:w-0 md:w-1/2 flex flex-row items-center justify-end"
                 >
                     <a class="font-bold mr-2">Inicio</a>
                     <a class="font-bold mr-2">Contactanos</a>
@@ -87,11 +87,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="xs:w-full md:w-1/2 ">
+                <div class="xs:w-full md:w-1/2">
                     <div class="p-2">
                         <table class="w-full shadow rounded">
                             <thead
-                                class="text-center text-white font-bold  bg-primary rounded-t"
+                                class="text-center text-white font-bold bg-primary rounded-t"
                             >
                                 <td>Enganche</td>
                                 <td>Mensualidad</td>
@@ -117,7 +117,7 @@
                         </table>
                     </div>
                     <button
-                        class="rounded m-auto  bg-primary p-2 uppercase font-bold text-center"
+                        class="rounded m-auto bg-primary p-2 uppercase font-bold text-center"
                     >
                         Crear mi cuenta
                     </button>
@@ -132,11 +132,11 @@
             </div>
             <div class="flex">
                 <div class="xs:w-full md:w-1/2 contacto">
-                    <div class="flex ">
-                        <div class="w-1/2 text-center text-white ">Instagram</div>
-                        <div class="w-1/2 text-center text-white ">
-
-                            Facebook</div>
+                    <div class="flex">
+                        <div class="w-1/2 text-center text-white">
+                            Instagram
+                        </div>
+                        <div class="w-1/2 text-center text-white">Facebook</div>
                     </div>
                 </div>
                 <div class="xs:w-full md:w-1/2 m-2">
@@ -174,12 +174,31 @@
             </p>
         </div>
 
-
-        <div class="fixed z-20 top-0 h-screen   right-0  w-full flex flex-row overflow">
-            <div class="bg-black/40 backdrop-blur-sm  w-2/12"></div>
+        <div
+            v-if="slider"
+            class="fixed z-20 top-0 h-screen right-0 w-full flex flex-row overflow"
+        >
+            <div class="bg-black/40 backdrop-blur-sm w-2/12"></div>
             <div class="bg-white w-5/6 overflow-auto">
                 <router-view></router-view>
             </div>
         </div>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            slider: false,
+        };
+    },
+    methods: {
+        openSlider() {
+            this.slider = true;
+        },
+    },
+    mounted() {
+        // this.openSlider()
+    },
+};
+</script>
