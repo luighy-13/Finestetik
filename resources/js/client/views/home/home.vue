@@ -8,24 +8,30 @@
                 <div
                     class="xs:w-0 md:w-1/2 flex flex-row items-center justify-end"
                 >
-                    <a class="font-bold mr-2">Inicio</a>
+                    <!-- <a class="font-bold mr-2">Inicio</a> -->
                     <a class="font-bold mr-2">Contactanos</a>
-                    <a class="font-bold mr-2">Registrarme</a>
+                    <a class="font-bold mr-2" @click="goTo('/sing-up')"
+                        >Crear Cuenta</a
+                    >
                     <a class="font-bold mr-2">Iniciar Sesión</a>
-                    <!-- <div class="mr-2">
+                    <div class="mr-2" @click="menu_user = !menu_user">
                         <a class="font-bold mr-2">Mi perfil</a>
                         <div
+                            v-if="menu_user"
                             class="bg-white m-1 absolute shadow w-48 flex flex-col rounded z-10 right-0"
                         >
                             <a
+                                @click="goTo('/cirugia')"
                                 class="font-bold mr-2 text-gray-600 w-full pl-2 pr-2 h-primary rounded-t"
                                 >Mi Cirugía</a
                             >
                             <a
+                                @click="goTo('/tarjetas')"
                                 class="font-bold mr-2 text-gray-600 w-full pl-2 pr-2 h-primary"
                                 >Mis Tarjetas</a
                             >
                             <a
+                                @click="goTo('/recibos')"
                                 class="font-bold mr-2 text-gray-600 w-full pl-2 pr-2 h-primary"
                                 >Recibos y Facturas</a
                             >
@@ -34,7 +40,7 @@
                                 >Cerrar Sesión</a
                             >
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,6 +123,7 @@
                         </table>
                     </div>
                     <button
+                        @click="goTo('/sing-up')"
                         class="rounded m-auto bg-primary p-2 uppercase font-bold text-center"
                     >
                         Crear mi cuenta
@@ -128,15 +135,28 @@
         <div class="mt-8">
             <div class="w-full text-center">
                 <p class="text-2xl font-bold">Contactanos</p>
-                <p>Un asesor se pondrá en contacto con usted</p>
+                <!-- <p>Un asesor se pondrá en contacto con usted</p> -->
             </div>
             <div class="flex">
-                <div class="xs:w-full md:w-1/2 contacto">
-                    <div class="flex">
-                        <div class="w-1/2 text-center text-white">
-                            Instagram
+                <div
+                    class="xs:w-full md:w-1/2 contacto  "
+                >
+                    <div class="">
+                        <p class="text-center text-white font-bold uppercase text-6xl">Síguenos</p>
+                        <p class="text-center text-white font-medium uppercase text-3xl">En nuestras redes sociales</p>
+                        <div class="flex mt-2">
+                            <div class="w-1/2 text-center text-white">
+                                <i class="fab fa-instagram-square text-8xl"></i>
+
+                            </div>
+                            <div class="w-1/2 text-center text-white">
+                                <i class="fab fa-facebook-square text-8xl"></i>
+
+                            </div>
                         </div>
-                        <div class="w-1/2 text-center text-white">Facebook</div>
+                        <div>
+                            <p class="text-center font-medium text-white text-2xl mt-4">Síguenos, comenta y comparte</p>
+                        </div>
                     </div>
                 </div>
                 <div class="xs:w-full md:w-1/2 m-2">
@@ -180,6 +200,11 @@
         >
             <div class="bg-black/40 backdrop-blur-sm w-2/12"></div>
             <div class="bg-white w-5/6 overflow-auto">
+                <div class="text-right pr-1">
+                    <button @click="goBack()" class="text-gray-500">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
                 <router-view></router-view>
             </div>
         </div>
@@ -190,15 +215,23 @@ export default {
     data() {
         return {
             slider: false,
+            menu_user: "",
         };
     },
     methods: {
         openSlider() {
-            this.slider = true;
+            this.slider = !this.slider;
+        },
+        goTo(route) {
+            this.openSlider();
+            this.$router.push(route);
+            // localStorage.setItem("route_active", JSON.stringify({route}))
+        },
+        goBack() {
+            this.$router.push("/");
+            this.openSlider();
         },
     },
-    mounted() {
-        // this.openSlider()
-    },
+    mounted() {},
 };
 </script>

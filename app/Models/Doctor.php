@@ -11,30 +11,30 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class User
+ * Class Doctor
  * 
  * @property int $id
+ * @property string|null $doctor
+ * @property string|null $specialty
  * @property string|null $email
- * @property string|null $password
- * @property string|null $userscol
+ * @property string|null $phone
+ * @property string|null $address
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
  *
  * @package App\Models
  */
-class User extends Model
+class Doctor extends Model
 {
 	use SoftDeletes;
-	protected $table = 'users';
-
-	protected $hidden = [
-		'password'
-	];
+	protected $table = 'doctors';
 
 	protected $fillable = [
+		'doctor',
+		'specialty',
 		'email',
-		'password',
-		'userscol'
+		'phone',
+		'address'
 	];
 }
