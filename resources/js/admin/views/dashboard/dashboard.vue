@@ -36,6 +36,7 @@
                     <template v-for="(item, key) in menu_items">
                         <template>
                             <div
+                                @click="item.show = !item.show; goTo(item.path)"
                                 :key="key"
                                 class="hover:bg-gray-200 rounded p-1 pt-2 pb-2 mt-1 cursor-pointer flex text-gray-600"
                             >
@@ -46,9 +47,10 @@
                                 </p>
                             </div>
 
-                            <div v-if="item.group" class="pl-4" :key="key">
+                            <div v-if="item.group && item.show" class="pl-4" :key="key">
                                 <div
                                     v-for="(item_group, key_g) in item.group"
+                                    @click="goTo(item_group.path)"
                                     :key="key_g"
                                     class="hover:bg-gray-200 rounded p-1 pt-2 pb-2 mt-1 cursor-pointer flex text-gray-600"
                                 >
@@ -63,6 +65,7 @@
                 <!-- <div class="bg-primary h-44 w-full">
                     <p class=""></p>
                 </div> -->
+                <router-view></router-view>
             </div>
         </div>
     </div>

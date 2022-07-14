@@ -6,6 +6,7 @@ import Router from 'vue-router';
 // import Vue from 'vue'; //import again even though you already imported it
 // import Router from 'vue-router'; // and this is where difference comes in
 import dashboard from "../views/dashboard/dashboard.vue";
+import display from "../views/display/display.vue"
 
 Vue.use(Router);
 const routes = [
@@ -15,7 +16,13 @@ const routes = [
     },
     {
         path: "/",
-        component: dashboard
+        component: dashboard,
+        children:[
+            {
+                path: '/monitor-de-ventas',
+                component: display
+            }
+        ]
     },
 ];
 const router = new Router({routes : routes});

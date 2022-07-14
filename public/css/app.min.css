@@ -6,6 +6,27 @@ body {
   left: 0;
 }
 
+.searcher {
+  border: 1px;
+}
+.searcher input {
+  border: none;
+  border-radius: 0;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  height: 2.5rem;
+  margin: 0;
+}
+.searcher button {
+  background: #376CB2;
+  color: #fff;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  height: 2.5rem;
+  margin-top: 0.2rem;
+  width: 6rem;
+}
+
 .bk-presentation {
   background-color: #376CB2;
   color: #fff;
