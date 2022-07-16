@@ -17,13 +17,13 @@ use App\Http\Controllers\AuthController;
 
 
 Route::get('/pass',function(){
-    return bcrypt("Administrador2021");
+    return bcrypt("SuAdmin#");
   });
 
   Route::post('auth/login', [AuthController::class,'login']);
 
   Route::group(['middleware' => 'jwt.auth'], function(){
-    Route::get('auth/user', [AuthController::class.'user']);
+    Route::get('auth/user', [AuthController::class,'user']);
     Route::post('auth/logout', [AuthController::class,'logout']);
     Route::post('auth/register', [AuthController::class,'register']);
     Route::get('auth/users', [AuthController::class,'getUsers']);

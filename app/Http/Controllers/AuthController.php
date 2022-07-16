@@ -55,24 +55,7 @@ class AuthController extends Controller
         }
 
         $user->email = $request->email;
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-        $user->rol_id = $request->rol;
-        $user->is_customer = $request->is_customer;
-        if($request->is_customer == 1)
-        {
-            // $openpay_ctr = new OpenpayController();
-            // $id_openpay = $openpay_ctr->createUser($request);
 
-            // $user->pay_user = $id_openpay;
-        }
-
-        if($request->facture)
-        {
-            $user->rfc = $request->rfc;
-            $user->email_facture = $request->email_facture;
-            $user->social_name = $request->social_name;
-        }
 
         $user->save();
 

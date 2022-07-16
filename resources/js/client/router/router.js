@@ -10,19 +10,19 @@ import login from '../views/login/login.vue'
 
 Vue.use(Router);
 const routes = [
-
+    {
+        path: "/login",
+        component: login,
+        meta: {
+            auth: false
+        },
+    },
     {
         path: "/",
         component: home,
 
         children:[
-            {
-                path: "/login",
-                component: login,
-                meta: {
-                    auth: false
-                },
-            },
+
             {
                 path: "/sing-up",
                 component: sing_up,

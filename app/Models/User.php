@@ -10,9 +10,14 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+
 /**
  * Class User
- * 
+ *
  * @property int $id
  * @property string|null $email
  * @property string|null $password
@@ -23,18 +28,34 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App\Models
  */
-class User extends Model
+class User extends Authenticatable implements JWTSubject
 {
-	use SoftDeletes;
-	protected $table = 'users';
+    use Notifiable;
 
-	protected $hidden = [
-		'password'
-	];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'email', 'password'
+    ];
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'remember_token',
+    ];
 
-	protected $fillable = [
-		'email',
-		'password',
-		'userscol'
-	];
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }
