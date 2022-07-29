@@ -40,9 +40,14 @@ Route::get('/pass',function(){
 
 Route::prefix('sales')->group(function(){
     Route::get('/', [salesController::class,'index']);
+    Route::post('/add',[salesController::class, 'newSale']);
 });
 
 Route::prefix('customers')->group(function () {
     Route::post('sales', [salesController::class, 'byCustomer']);
+});
+
+Route::prefix('doctors')->group(function () {
+
 });
 

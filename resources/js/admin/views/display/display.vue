@@ -76,6 +76,7 @@
                             <button class="rounded text-center p-1 bg-green-600 text-white w-full" v-if="element.status == 1">A tiempo</button>
                             <button class="rounded text-center p-1 bg-rose-600 text-white w-full" v-if="element.status == 2">Retrasado</button>
                             <button class="rounded text-center p-1 bg-primary text-white w-full" v-if="element.status == 3">Terminado</button>
+                            <button class="animate-pulse rounded text-center p-1 bg-yellow-400 text-black font-bold w-full" v-if="element.status == 4">Validar Documentos</button>
 
                         </div>
                     </div>

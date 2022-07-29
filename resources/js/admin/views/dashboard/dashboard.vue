@@ -1,7 +1,7 @@
 <script src="./dashboard.js"></script>
 <template>
     <div class=" relative h-screen">
-        <div class="bg-primary h-14 flex">
+        <!-- <div class="bg-primary h-14 flex">
             <div class="w-1/6">
                  <img src="/logo-white.png" class="w-3/4 h-full m-auto" />
             </div>
@@ -14,7 +14,7 @@
                     <button><i class=" fas fa-sign-out-alt"></i> Salir</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="flex h-full ">
             <div class="bg-white overflow-auto h-full w-1/6 pt-2 shadow border-r">
