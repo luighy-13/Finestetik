@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class="bg-rose-600 text-center text-white font-bold pt-2 pb-2">Esta página es una versión de prueba.</div>
+        
         <router-view></router-view>
+        <div class="fixed bottom-0 w-full bg-black/40 text-white text-center">Build 1.0.0.</div>
     </div>
 </template

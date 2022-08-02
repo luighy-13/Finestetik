@@ -9,6 +9,7 @@ body {
 .searcher {
   border: 1px;
 }
+
 .searcher input {
   border: none;
   border-radius: 0;
@@ -17,6 +18,7 @@ body {
   height: 2.5rem;
   margin: 0;
 }
+
 .searcher button {
   background: #376CB2;
   color: #fff;
@@ -49,7 +51,8 @@ body {
   color: #fff;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 
@@ -94,3 +97,4 @@ textarea {
   background: #376CB2 !important;
   cursor: pointer;
 }
+

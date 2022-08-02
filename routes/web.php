@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,13 +18,3 @@ Route::get('/', function(){
 Route::get('/admin', function(){
     return view('admin');
 });
-
-// Route::get('/{client}', function(){
-//     return view('client');
-// })->where('client', '.*');
-
-// Route::get('/admin/{admin}', function(){
-//     return view('admin');
-// })->where('admin', '.*');
-
-
