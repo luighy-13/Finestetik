@@ -7,9 +7,9 @@ export default {
                     icon: 'fas fa-cog',
                     show: false,
                     group: [
-                        { name: 'Usuarios', path: '/' },
-                        { name: 'Roles', path: '/' },
-                        { name: 'Permisos', path: '/' }
+                        { name: 'Usuarios', path: '/sistema/usuarios' },
+                        { name: 'Roles', path: '/sistema/roles' },
+                        { name: 'Permisos', path: '/sistema/permisos' }
                     ]
                 },
                 { name: 'Clientes', icon: 'fas fa-handshake', path: '/' },

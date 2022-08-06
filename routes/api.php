@@ -36,6 +36,17 @@ Route::get('/pass',function(){
     Route::get('auth/refresh', [AuthController::class,'refresh']);
   });
 
+  Route::group(['prefix' => 'users'], function(){
+    Route::post('main', 'mainController@mainUser');
+    Route::group(['prefix' => 'rol'], function(){
+        Route::get('show', 'rolController@show');
+        Route::get('show-with-permissions', 'rolController@showWhitPermission');
+        Route::post('add-edit', 'rolController@add_or_edit');
+        Route::post('delete', 'rolController@deleted');
+        Route::post('change-status-permission', 'rolController@saveStatusPermission');
+        Route::post('show_rol', 'rolController@showRol');
+    });
+});
 
 
 Route::prefix('sales')->group(function(){

@@ -7,15 +7,11 @@ export default {
             title:'',
             show:false,
             name:'',
-            email:'',
-            phone: '',
-            rol: '',
-            is_customer: 0,
-            password: '',
-            password_confirm: ''
-
+            description:'',
+            delete:0,
+            edit: 0,
+            write:0
         },
-        rols:[],
         search: '',
       }
     },
@@ -24,18 +20,16 @@ export default {
       cleanForm()
       {
         this.modal= {
-          id:0,
-          title:'',
-          show:false,
-          name:'',
-          email:'',
-          phone: '',
-          rol: '',
-          is_customer: 0,
-          password: '',
-          password_confirm: ''
+            title: '',
+            id: 0,
+            show:false,
+            name:'',
+            description:'',
+            delete:0,
+            edit: 0,
+            write:0
 
-      }
+        }
       },
       openModal(title){
         this.cleanForm()
@@ -46,7 +40,7 @@ export default {
       },
       save()
       {
-        let uri = '/auth/register', scope = this;
+        let uri = '/users/rol/add-edit', scope = this;
         this.axios.post(uri, this.modal).then(function(res){
           scope.cleanForm()
           scope.getData()
@@ -55,53 +49,40 @@ export default {
         })
       },
       handleEdit(index, row) {
-
         this.cleanForm()
         this.modal= {
             title: "Editar Rol",
             id: row.id,
             show:true,
             name:row.name,
-            email: row.email,
-            phone: row.phone,
-            rol: row.rol_id,
-            password: row.password,
-            password_confirm: row.password,
-            is_customer: 0,
+            description:row.description,
+            delete:row.delete == 1 ? true : false,
+            edit:  row.edit == 1 ? true : false,
+            write: row.write == 1 ? true : false
         }
 
       },
       handleDelete(index, row) {
-
-        let uri  = '/auth/delete-user', scope = this;
+        let uri  = '/users/rol/delete', scope = this;
         this.axios.post(uri,row).then(function(res){
           scope.getData()
         }).catch(function(res){
 
         })
-
       },
       getData()
       {
-        let uri = '/auth/users', scope = this;
-        this.axios.get(uri).then(function(res){
-          scope.tableData = res.data.data
-        }).catch(function(res){
-
-        })
-      },
-      getRols(){
         let uri = '/users/rol/show', scope = this;
         this.axios.get(uri).then(function(res){
-          scope.rols = res.data.data
+          scope.tableData = res.data.data
         }).catch(function(res){
 
         })
       }
     },
     mounted()
-    {
-      this.getRols()
+
+ {
       this.getData()
     }
   }
