@@ -12,8 +12,8 @@ export default {
                         { name: 'Permisos', path: '/sistema/permisos' }
                     ]
                 },
-                { name: 'Clientes', icon: 'fas fa-handshake', path: '/' },
-                { name: 'Doctores', icon: 'fas fa-user-md', path: '/' },
+                { name: 'Clientes', icon: 'fas fa-handshake', path: '/clientes' },
+                { name: 'Doctores', icon: 'fas fa-user-md', path: '/doctores' },
                 { name: 'Monitor de ventas', icon: 'fas fa-desktop', path: '/monitor-de-ventas' },
                 {
                     name: 'Reportes',

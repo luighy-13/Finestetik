@@ -6,6 +6,19 @@ export default {
         }
     },
     methods:{
+        geClassButton(){
+            var type = (this.type == "") ? "default": this.type;
+            
+            switch(type){
+                case "primary":
+                    return "bg-primary"
+                break;
+                case "danger":
+                    return "bg-rose-600 text-white"
+                case "default":
+                    return "bg-white text-black border"
+            }
+        },
         async validateUser (){
             var rol_id = this.$auth.user().rol_id
             let uri = '/users/rol/show_rol'
@@ -35,6 +48,6 @@ export default {
         }
     },
     mounted(){
-
+        console.log(this.type)
     }
 }

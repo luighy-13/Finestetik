@@ -10,6 +10,8 @@ import display from "../views/display/display.vue";
 import users from "../views/system/Users/users.vue";
 import roles from "../views/system/rols/rols.vue";
 import access from "../views/system/access_rols/access_rols.vue"
+import customer from "../views/customers/customer/customer.vue"
+import doctors from "../views/doctors/doctors.vue"
 
 Vue.use(Router);
 const routes = [
@@ -36,6 +38,14 @@ const routes = [
             {
                 path: '/sistema/permisos',
                 component: access
+            },
+            {
+                path: '/clientes',
+                component: customer
+            },
+            {
+                path: "/doctores",
+                component: doctors
             }
         ]
     },
